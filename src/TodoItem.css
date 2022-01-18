@@ -1,0 +1,21 @@
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    margin: 10px 0px;
+    border-radius: 8px 0px 8px 0px;
+    font-size: 3.2rem;
+    background-color: rgb(224, 223, 215);
+}
+
+p, span {
+    height: 100%;
+}
+
+span {
+    width: 30px;
+    border-radius: 8px 0px 8px 0px;
+    background-color: rgba(128, 128, 128, 0.568);
+    cursor: pointer;
+}

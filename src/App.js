@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import { TodoCounter } from './TodoCounter'
 import { TodoSearch } from './TodoSearch'
 import { TodoList } from './TodoList'
@@ -15,19 +15,21 @@ function App() {
   return (
     //The tag below is equal to <React.Fragment>
     <>
-      <TodoCounter />
-      
-      <TodoSearch />
-      
-      <TodoList>
-        {todos.map( (todo) => <TodoItem key={todo.text} text={todo.text} />  )}
-        {
-        // When rendering a list, to avoid possible problems a "key" will be needed
-        // for each element inside the list, this key must be different in each case.
-        }
-      </TodoList>
+      <div className='App'>
+        <TodoCounter />
+        
+        <TodoList>
+          {todos.map( (todo) => <TodoItem key={todo.text} text={todo.text} />  )}
+          {
+          // When rendering a list, to avoid possible problems a "key" will be needed
+          // for each element inside the list, this key must be different in each case.
+          }
+        </TodoList>
 
-      <CreateTodoButton />
+        <TodoSearch />
+
+        <CreateTodoButton />
+      </div>
     </>
   );
 }
