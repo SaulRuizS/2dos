@@ -28,6 +28,10 @@ span:hover {
     transition: 100ms ease-in;
 }
 
+.pending:hover {
+    background-image: url("../public/circle-dotted-blue.svg");
+}
+
 .check {
     background-image: url("../public/circle-check.svg");
     transition: 100ms ease-in;
