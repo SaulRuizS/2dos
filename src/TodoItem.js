@@ -1,14 +1,18 @@
 import React from "react";
 import "./TodoItem.css";
+//check
+//pending
+let checkmark = 'pending'
 
 function TodoItem(props) {
     return (
         <li>
-            <span>+</span>
+            <span className={`${checkmark}`}></span>
             <p>{props.text}</p>
-            <span>-</span>
+            <span className="remove"></span>
         </li>    
     );
 }
 
 export { TodoItem }
+

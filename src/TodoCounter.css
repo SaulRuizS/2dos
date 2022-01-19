@@ -1,13 +1,14 @@
-
-
 h1 {
-    font-size: 4.4rem;
+    margin-top: 14px;
+    font-size: 4rem;
+    font-weight: 800;
     color: rgb(125, 206, 170);
 }
 
 h2 {
     width: 70%;
     margin: 10px 0px;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 2rem;
     color: rgb(18, 68, 46);
 }

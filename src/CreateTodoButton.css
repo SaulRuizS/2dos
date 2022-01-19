@@ -1,13 +1,23 @@
 button {
+    position: relative;
+    top: 25px;
     width: auto;
     height: 50px;
-    margin: 16px 0px;
+    /* margin: 16px 0px; */
     padding: 0px 16px;
     border-width: 0px;
     border-radius: 25px;
+    font-family: 'Prompt', sans-serif;
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 500;
     color: rgb(37, 88, 65);
     background-color: rgb(125, 206, 170);
+    box-shadow: -2px 2px 0px 1px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+}
+
+button:hover {
+    /* color: rgb(241, 239, 231); */
+    background-color: rgb(115, 187, 154);
+    transition: 200ms ease-in;
 }
