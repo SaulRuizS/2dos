@@ -1,6 +1,7 @@
 button {
     position: relative;
-    top: 25px;
+    top: 21px;
+    left: 4px;
     width: auto;
     height: 50px;
     /* margin: 16px 0px; */
@@ -12,10 +13,11 @@ button {
     font-weight: 500;
     color: rgb(37, 88, 65);
     background-color: rgb(125, 206, 170);
-    box-shadow: -2px 2px 0px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -4px 4px 0px 1px #305745;
     cursor: pointer;
 }
-
+/*
+*/
 button:hover {
     /* color: rgb(241, 239, 231); */
     background-color: rgb(115, 187, 154);

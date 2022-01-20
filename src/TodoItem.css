@@ -25,7 +25,7 @@ span:hover {
 
 .pending {
     background-image: url("../public/circle-dotted.svg");
-    transition: 100ms ease-in;
+    transition: 50ms ease-in;
 }
 
 .pending:hover {
@@ -34,7 +34,7 @@ span:hover {
 
 .check {
     background-image: url("../public/circle-check.svg");
-    transition: 100ms ease-in;
+    transition: 50ms ease-in;
 }
 
 .remove {
