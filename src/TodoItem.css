@@ -44,3 +44,8 @@ span:hover {
 .remove:hover {
     background-image: url("../public/x-mark-red.svg");
 }
+
+.removed {
+    visibility: hidden;
+    transition: 200ms ease-out;
+}
