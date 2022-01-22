@@ -13,11 +13,11 @@ function TodoItem(props) {
                 onClick={() => {
                     if(checkmarkState === 'pending') {
                         setCheckmarkState('check');
-                        // checkedCount += 1;
+                        props.checkedCount += 1;
                     }
                     else if(checkmarkState === 'check') {
                         setCheckmarkState('pending');
-                        // checkedCount -= 1;
+                        props.checkedCount -= 1;
                     }
                     // console.log(checkedCount)
                 }} 

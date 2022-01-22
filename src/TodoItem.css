@@ -46,6 +46,6 @@ span:hover {
 }
 
 .removed {
-    visibility: hidden;
+    /* visibility: hidden; */
     transition: 200ms ease-out;
 }
