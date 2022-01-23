@@ -5,7 +5,7 @@ function TodoCounter(props) {
     return (
         <>
             <h1>2DOs</h1>
-            <h2>You have completed {props.checkedCount} of {props.total2DOs} 2DOs</h2>
+            <h2>You have completed {props.completedCount} of {props.total2DOs} 2DOs</h2>
         </>
     );
 }

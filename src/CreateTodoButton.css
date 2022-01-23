@@ -15,6 +15,7 @@ button {
     background-color: rgb(125, 206, 170);
     box-shadow: -4px 4px 0px 1px #305745;
     cursor: pointer;
+    user-select: none;
 }
 /*
 */

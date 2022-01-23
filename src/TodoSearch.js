@@ -3,7 +3,7 @@ import "./TodoSearch.css"
 
 function TodoSearch() {
     return(
-        <input placeholder='Enter a new 2DO'/>
+        <input placeholder='Search a 2DO'/>
     );
 }
 

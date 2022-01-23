@@ -1,5 +1,13 @@
 section {
     width: 80%;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+section::-webkit-scrollbar {
+    display: none;
+    /* position: relative; */
+    /* left: 10px; */
 }
 
 ul {

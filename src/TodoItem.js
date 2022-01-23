@@ -1,34 +1,32 @@
 import React from "react";
 import "./TodoItem.css";
-// import { checkedCount } from "./TodoCounter"
 
 function TodoItem(props) {
 
-    const [checkmarkState, setCheckmarkState] = React.useState('pending');
-    const [removeState, setRemoveState] = React.useState('');
+    const [completedState, setCompletedState] = React.useState('pending');
+    const completedResponse = false;
 
     return (
-        <li className={`${removeState}`}>
+
+        <li className={`${props.completed && 'completed-text'}`}>
             <span 
+                className={`${completedState}`}
                 onClick={() => {
-                    if(checkmarkState === 'pending') {
-                        setCheckmarkState('check');
-                        props.checkedCount += 1;
+                    // props.completed?
+                    //     setCompletedState('completed')
+                    //     :setCompletedState('pending');
+                    if(props.completed) {
+                        setCompletedState('pending');
+                        completedResponse = false;
                     }
-                    else if(checkmarkState === 'check') {
-                        setCheckmarkState('pending');
-                        props.checkedCount -= 1;
+                    else {
+                        setCompletedState('completed');
+                        completedResponse = true;
                     }
-                    // console.log(checkedCount)
-                }} 
-                className={`${checkmarkState}`}
-            ></span>
+                }}></span>
             <p>{props.text}</p>
-            <span onClick={() => {
-                setRemoveState('removed')
-                // props.splice()
-            }} className="remove"></span>
-        </li>    
+            <span className="remove"></span>
+        </li>   
     );
 }
 

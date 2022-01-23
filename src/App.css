@@ -3,7 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  /* width: 80%; */
+  min-width: 288px;
+  max-width: 80%;
+  max-height: 70vh;
   border-radius: 20px;
   text-align: center;
   background-color: rgb(241, 239, 231);
