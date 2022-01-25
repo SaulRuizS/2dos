@@ -17,13 +17,30 @@ const defaultTodos = [
 
 function App() {
 
+  const [completedState, setCompletedState] = React.useState(false);
+
   const [todos, setTodos] = React.useState(defaultTodos);
+
   const [searchValue, setSearchValue] = React.useState('');
 
   // !!todo.completed is equal to todo.completed === true
   const completedCount = todos.filter(todo => !!todo.completed).length;
   const total2DOs = todos.length;
 
+  let searchedTodos = []; //Space to save searched 2DOs
+
+  if(!searchValue.length >= 1) { 
+    //If nothing has been writen in the input, show all 2DOs.
+    searchedTodos = todos;
+  } else {
+    searchedTodos = todos.filter( (todo) => {
+      const todoText = todo.text.toLowerCase(); //Avoiding user input issues
+      const searchText = searchValue.toLowerCase();
+
+      //Filtering every todo that contains the same text introduced by the user.
+      return todoText.includes(searchText);
+    } )
+  }
 
   return (
     //The tag below is equal to <React.Fragment>
@@ -31,14 +48,17 @@ function App() {
       <div className='App'>
         <TodoCounter completedCount={completedCount} total2DOs={total2DOs}/>
 
-        <TodoSearch />
+        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
         
         <TodoList>
-          {todos.map( (todo) => <TodoItem key={todo.text} text={todo.text} completed={todo.completed}/>
-          // {
-          //   <TodoItem key={todo.text} text={todo.text} completed={todo.completed}/>  
-          //   TodoItem.completedResponse?todo.completed=false:todo.completed=true;
-          // }
+          {searchedTodos.map( (todo) => 
+            <TodoItem 
+              key={todo.text} 
+              text={todo.text} 
+              completed={todo.completed}
+              completedState={completedState}
+              setCompletedState={setCompletedState}
+            />
           )}
           {
           // When rendering a list, to avoid possible problems a "key" will be needed

@@ -1,30 +1,28 @@
 import React from "react";
 import "./TodoItem.css";
 
-function TodoItem(props) {
+function TodoItem({text, completed, completedState, setCompletedState}) {
 
-    const [completedState, setCompletedState] = React.useState('pending');
-    const completedResponse = false;
+    const [checkedState, setCheckedState] = React.useState('pending');
+    // const completedResponse = false;
 
     return (
 
-        <li className={`${props.completed && 'completed-text'}`}>
+        <li className={`${completed && 'completed-text'}`}>
             <span 
-                className={`${completedState}`}
+                className={`${checkedState}`}
                 onClick={() => {
-                    // props.completed?
-                    //     setCompletedState('completed')
-                    //     :setCompletedState('pending');
-                    if(props.completed) {
-                        setCompletedState('pending');
-                        completedResponse = false;
+                    if(completed===true) {
+                        setCheckedState('pending');
+                        setCompletedState(false);
                     }
                     else {
-                        setCompletedState('completed');
-                        completedResponse = true;
+                        setCheckedState('completed');
+                        setCompletedState(true);
                     }
+                    console.log(completedState);
                 }}></span>
-            <p>{props.text}</p>
+            <p>{text}</p>
             <span className="remove"></span>
         </li>   
     );
