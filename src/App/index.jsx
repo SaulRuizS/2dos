@@ -1,23 +1,31 @@
 import './App.css';
-import { TodoCounter } from './TodoCounter'
-import { TodoSearch } from './TodoSearch'
-import { TodoList } from './TodoList'
-import { TodoItem} from './TodoItem'
-import { CreateTodoButton } from './CreateTodoButton'
+import { TodoCounter } from '../Components/TwoDoCounter'
+import { TodoSearch } from '../Components/TwoDoSearch'
+import { TodoList } from '../Components/TwoDoList'
+import { TodoItem} from '../Components/TwoDoItem'
+import { CreateTodoButton } from '../Components/CreateTwoDoButton'
 import React from 'react';
 
 const defaultTodos = [
-  { text: 'First TODO',completed: false,},
-  { text: 'Second TODO',completed: false,},
-  { text: 'Third TODO',completed: false,},
-  { text: 'Forth TODO',completed: false,},
-  { text: 'Fifth TODO',completed: false,},
+  { text: '1 TODO',completed: false,},
+  { text: '2 TODO',completed: false,},
+  { text: '3 TODO',completed: false,},
+  { text: '4 TODO',completed: false,},
+  { text: '5 TODO',completed: false,},
+  { text: '6 TODO',completed: false,},
+  { text: '7 TODO',completed: false,},
+  { text: '8 TODO',completed: false,},
+  { text: '9 TODO',completed: false,},
+  { text: '10 TODO',completed: false,},
+  { text: '11 TODO',completed: false,},
+  { text: '12 TODO',completed: false,},
+  { text: '13 TODO',completed: false,},
+  { text: '14 TODO',completed: false,},
+  { text: '15 TODO',completed: false,},
   { text: 'n TODO',completed: false,},
 ]
 
 function App() {
-
-  const [completedState, setCompletedState] = React.useState(false);
 
   const [todos, setTodos] = React.useState(defaultTodos);
 
@@ -42,6 +50,23 @@ function App() {
     } )
   }
 
+  const setCompletedState = (text, completedState) => {
+    const todoIndex = todos.findIndex( (todo) => todo.text === text );
+    const completed2DOs = [...todos];
+    completed2DOs[todoIndex].completed = completedState;
+    // const currentCompleted2DO = completed2DOs[todoIndex];
+    // completed2DOs.splice(todoIndex, 1);
+    // completed2DOs.push(currentCompleted2DO);
+    setTodos(completed2DOs);
+  }
+
+  const remove2DO = (text) => {
+    const todoIndex = todos.findIndex( (todo) => todo.text === text );
+    const new2DOsList = [...todos];
+    new2DOsList.splice(todoIndex, 1);
+    setTodos(new2DOsList);
+  }
+
   return (
     //The tag below is equal to <React.Fragment>
     <>
@@ -56,8 +81,8 @@ function App() {
               key={todo.text} 
               text={todo.text} 
               completed={todo.completed}
-              completedState={completedState}
               setCompletedState={setCompletedState}
+              remove2DO={remove2DO}
             />
           )}
           {

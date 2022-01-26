@@ -3,8 +3,7 @@ button {
     top: 21px;
     left: 4px;
     width: auto;
-    height: 50px;
-    /* margin: 16px 0px; */
+    min-height: 50px;
     padding: 0px 16px;
     border-width: 0px;
     border-radius: 25px;
@@ -17,8 +16,7 @@ button {
     cursor: pointer;
     user-select: none;
 }
-/*
-*/
+
 button:hover {
     /* color: rgb(241, 239, 231); */
     background-color: rgb(115, 187, 154);

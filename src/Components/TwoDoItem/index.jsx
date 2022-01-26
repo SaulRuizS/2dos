@@ -1,10 +1,9 @@
 import React from "react";
-import "./TodoItem.css";
+import "./TwoDoItem.css";
 
-function TodoItem({text, completed, completedState, setCompletedState}) {
+function TodoItem({text, completed, setCompletedState, remove2DO}) {
 
     const [checkedState, setCheckedState] = React.useState('pending');
-    // const completedResponse = false;
 
     return (
 
@@ -14,16 +13,22 @@ function TodoItem({text, completed, completedState, setCompletedState}) {
                 onClick={() => {
                     if(completed===true) {
                         setCheckedState('pending');
-                        setCompletedState(false);
+                        setCompletedState(text, false);
                     }
                     else {
                         setCheckedState('completed');
-                        setCompletedState(true);
+                        setCompletedState(text, true);
                     }
-                    console.log(completedState);
-                }}></span>
+                }}
+            ></span>
             <p>{text}</p>
-            <span className="remove"></span>
+            <span 
+                className="remove"
+                onClick={() => {
+                    remove2DO(text);
+                    // alert('2DO removed');
+                }}
+            ></span>
         </li>   
     );
 }

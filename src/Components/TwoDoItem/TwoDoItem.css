@@ -1,0 +1,57 @@
+li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    margin: 10px 0px;
+    border-radius: 8px 0px 8px 0px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 2.8rem;
+    background-color: rgb(224, 223, 215);
+    transition: 200ms ease-in-out;
+}
+
+span {
+    height: 100%;
+    width: 30px;
+    border-radius: 8px 0px 8px 0px;
+    cursor: pointer;
+}
+
+.pending {
+    background-image: url("../../../public/circle-dotted.svg");
+    transition: 50ms ease-in;
+}
+
+.completed {
+    background-image: url("../../../public/circle-check.svg");
+    transition: 50ms ease-in;
+}
+
+.completed-text {
+    text-decoration:line-through;
+    /* transition: 200ms ease-in; */
+}
+
+.remove {
+    background-image: url("../../../public/x-mark.svg");
+}
+
+@media (min-width: 760px) {
+
+    span:hover {
+        background-color: rgba(128, 128, 128, 0.192);
+        transition: 200ms ease-in;
+    }
+    
+    .pending:hover {
+        background-image: url("../../../public/circle-dotted-blue.svg");
+        /* transition: 50ms ease-in; */
+    }
+    
+    .remove:hover {
+        background-image: url("../../../public/x-mark-red.svg");
+    }
+}
