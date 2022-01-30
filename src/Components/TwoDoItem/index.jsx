@@ -9,17 +9,17 @@ function TodoItem({text, completed, setCompletedState, remove2DO}) {
 
         <li className={`${completed && 'completed-text'}`}>
             <span 
-                className={`${checkedState}`}
                 onClick={() => {
-                    if(completed===true) {
-                        setCheckedState('pending');
-                        setCompletedState(text, false);
-                    }
-                    else {
+                    if(completed===false) {
                         setCheckedState('completed');
                         setCompletedState(text, true);
                     }
+                    else {
+                        setCheckedState('pending');
+                        setCompletedState(text, false);
+                    }
                 }}
+                className={`${checkedState}`}
             ></span>
             <p>{text}</p>
             <span 

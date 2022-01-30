@@ -25,21 +25,47 @@ import React from 'react';
 //   { text: 'n TODO',completed: false,},
 // ]
 
-function App() {
-
-  const localStorage2DOs = localStorage.getItem('2DOS_V1');
+function useLocalStorage(itemName, initialValue) {
+  const localStorage2DOs = localStorage.getItem(itemName);
   let parsed2DOs;
 
   if(!localStorage2DOs) {
     //In case there is no saved data, create a new localStorage
-    localStorage.setItem('2DOS_V1', JSON.stringify( [] ));
-    parsed2DOs = [];
+    localStorage.setItem(itemName, JSON.stringify( initialValue ));
+    parsed2DOs = initialValue;
   } else {
     parsed2DOs = JSON.parse(localStorage2DOs);
   }
+  const [todo, setTodos] = React.useState(parsed2DOs);
 
-  const [todos, setTodos] = React.useState(parsed2DOs);
-  // const [todos, setTodos] = React.useState(defaultTodos);
+  const save2DOs = (todosToSave) => {
+    const string2DOs = JSON.stringify(todosToSave);
+    localStorage.setItem('2DOS_V1', string2DOs);
+    setTodos(todosToSave);
+  };
+
+  return [
+    todo,
+    save2DOs,
+  ];
+}
+
+function App() {
+
+  // const localStorage2DOs = localStorage.getItem('2DOS_V1');
+  // let parsed2DOs;
+
+  // if(!localStorage2DOs) {
+  //   //In case there is no saved data, create a new localStorage
+  //   localStorage.setItem('2DOS_V1', JSON.stringify( [] ));
+  //   parsed2DOs = [];
+  // } else {
+  //   parsed2DOs = JSON.parse(localStorage2DOs);
+  // }
+
+  // const [todos, setTodos] = React.useState(parsed2DOs);
+
+  const [todos, setTodos] = useLocalStorage('2DOS_V1', []);
 
   const [searchValue, setSearchValue] = React.useState('');
 
@@ -62,11 +88,11 @@ function App() {
     });
   }
 
-  const save2DOs = (todosToSave) => {
-    const string2DOs = JSON.stringify(todosToSave);
-    localStorage.setItem('2DOS_V1', string2DOs);
-    setTodos(todosToSave);
-  };
+  // const save2DOs = (todosToSave) => {
+  //   const string2DOs = JSON.stringify(todosToSave);
+  //   localStorage.setItem('2DOS_V1', string2DOs);
+  //   setTodos(todosToSave);
+  // };
 
   const setCompletedState = (text, completedState) => {
     const todoIndex = todos.findIndex( (todo) => todo.text === text );
