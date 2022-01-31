@@ -36,7 +36,8 @@ function useLocalStorage(itemName, initialValue) {
   } else {
     parsed2DOs = JSON.parse(localStorage2DOs);
   }
-  const [todo, setTodos] = React.useState(parsed2DOs);
+
+  const [todos, setTodos] = React.useState(parsed2DOs);
 
   const save2DOs = (todosToSave) => {
     const string2DOs = JSON.stringify(todosToSave);
@@ -45,7 +46,7 @@ function useLocalStorage(itemName, initialValue) {
   };
 
   return [
-    todo,
+    todos,
     save2DOs,
   ];
 }
@@ -65,7 +66,7 @@ function App() {
 
   // const [todos, setTodos] = React.useState(parsed2DOs);
 
-  const [todos, setTodos] = useLocalStorage('2DOS_V1', []);
+  const [todos, save2DOs] = useLocalStorage('2DOS_V1', []);
 
   const [searchValue, setSearchValue] = React.useState('');
 
