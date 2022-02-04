@@ -9,6 +9,7 @@ function TodoItem({text, completed, setCompletedState, remove2DO}) {
 
         <li className={`${completed && 'completed-text'}`}>
             <span 
+                className={`${checkedState}`}
                 onClick={() => {
                     if(completed===false) {
                         setCheckedState('completed');
@@ -19,7 +20,6 @@ function TodoItem({text, completed, setCompletedState, remove2DO}) {
                         setCompletedState(text, false);
                     }
                 }}
-                className={`${checkedState}`}
             ></span>
             <p>{text}</p>
             <span 
