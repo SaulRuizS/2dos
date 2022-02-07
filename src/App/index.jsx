@@ -25,6 +25,8 @@ import React from 'react';
 //   { text: 'n TODO',completed: false,},
 // ]
 
+
+//This is a custom hook for Local Storage
 function useLocalStorage(itemName, initialValue) {
   const localStorage2DOs = localStorage.getItem(itemName);
   let parsed2DOs;
@@ -111,6 +113,17 @@ function App() {
     new2DOsList.splice(todoIndex, 1);
     save2DOs(new2DOsList);
   };
+
+  //----------------------------------------------
+  //THIS IS JUST AN EXAMPLE OF "useEffect" REACT HOOK
+  console.log('useEffect has not been activated');
+
+  React.useEffect(() => {
+    console.log('useEffect is activated');
+  }, [total2DOs]);
+
+  console.log('useEffect already activated');
+  //----------------------------------------------
 
   return (
     //The tag below is equal to <React.Fragment>
