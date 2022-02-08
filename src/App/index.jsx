@@ -28,18 +28,27 @@ import React from 'react';
 
 //This is a custom hook for Local Storage
 function useLocalStorage(itemName, initialValue) {
-  const localStorage2DOs = localStorage.getItem(itemName);
-  let parsed2DOs;
+  
+  const [todos, setTodos] = React.useState(initialValue);
+  const [loading, setLoading] = React.useState(true);
 
-  if(!localStorage2DOs) {
-    //In case there is no saved data, create a new localStorage
-    localStorage.setItem(itemName, JSON.stringify( initialValue ));
-    parsed2DOs = initialValue;
-  } else {
-    parsed2DOs = JSON.parse(localStorage2DOs);
-  }
+  React.useEffect(() => {
+    setTimeout(() => {
+      const localStorage2DOs = localStorage.getItem(itemName);
+      let parsed2DOs;
+    
+      if(!localStorage2DOs) {
+        //In case there is no saved data, create a new localStorage
+        localStorage.setItem(itemName, JSON.stringify( initialValue ));
+        parsed2DOs = initialValue;
+      } else {
+        parsed2DOs = JSON.parse(localStorage2DOs);
+      }
 
-  const [todos, setTodos] = React.useState(parsed2DOs);
+      setTodos(parsed2DOs);
+      setLoading(false);
+    }, 1000);
+  });
 
   const save2DOs = (todosToSave) => {
     const string2DOs = JSON.stringify(todosToSave);
@@ -50,6 +59,7 @@ function useLocalStorage(itemName, initialValue) {
   return [
     todos,
     save2DOs,
+    loading,
   ];
 }
 
