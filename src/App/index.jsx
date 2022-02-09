@@ -31,36 +31,46 @@ function useLocalStorage(itemName, initialValue) {
   
   const [todos, setTodos] = React.useState(initialValue);
   const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
 
   React.useEffect(() => {
     setTimeout(() => {
-      const localStorage2DOs = localStorage.getItem(itemName);
-      let parsed2DOs;
-    
-      if(!localStorage2DOs) {
-        //In case there is no saved data, create a new localStorage
-        localStorage.setItem(itemName, JSON.stringify( initialValue ));
-        parsed2DOs = initialValue;
-      } else {
-        parsed2DOs = JSON.parse(localStorage2DOs);
-      }
+      try {
+        const localStorage2DOs = localStorage.getItem(itemName);
+        let parsed2DOs;
+      
+        if(!localStorage2DOs) {
+          //In case there is no saved data, create a new localStorage
+          localStorage.setItem(itemName, JSON.stringify( initialValue ));
+          parsed2DOs = initialValue;
+        } else {
+          parsed2DOs = JSON.parse(localStorage2DOs);
+        }
 
-      setTodos(parsed2DOs);
-      setLoading(false);
+        setTodos(parsed2DOs);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+      }
     }, 1000);
   });
 
   const save2DOs = (todosToSave) => {
-    const string2DOs = JSON.stringify(todosToSave);
-    localStorage.setItem('2DOS_V1', string2DOs);
-    setTodos(todosToSave);
+    try {
+      const string2DOs = JSON.stringify(todosToSave);
+      localStorage.setItem('2DOS_V1', string2DOs);
+      setTodos(todosToSave);
+    } catch (error) {
+      setError(error);
+    }
   };
 
-  return [
+  return {
     todos,
     save2DOs,
     loading,
-  ];
+    error,
+  };
 }
 
 function App() {
@@ -78,7 +88,12 @@ function App() {
 
   // const [todos, setTodos] = React.useState(parsed2DOs);
 
-  const [todos, save2DOs] = useLocalStorage('2DOS_V1', []);
+  const {
+    todos, 
+    save2DOs, 
+    loading,
+    error
+  } = useLocalStorage('2DOS_V1', []); //This comes from "useLocalStorage" React Hook.
 
   const [searchValue, setSearchValue] = React.useState('');
 
@@ -144,6 +159,10 @@ function App() {
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
         
         <TodoList>
+          {error && <p>There was an error...</p>}
+          {loading && <p>Loading, please wait...</p>}
+          {(!loading && !searchedTodos.length) && <p>Create your first 2DO!</p>}
+
           {searchedTodos.map( (todo) => 
             <TodoItem 
               key={todo.text} 
