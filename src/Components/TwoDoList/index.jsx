@@ -1,7 +1,7 @@
 import React from "react";
 import "./TwoDoList.css";
 
-function TodoList(props) {
+function TwoDoList(props) {
     return(
         // .children appends a child element into a parent element
         <section>
@@ -12,4 +12,4 @@ function TodoList(props) {
     );
 }
 
-export { TodoList }
+export { TwoDoList }

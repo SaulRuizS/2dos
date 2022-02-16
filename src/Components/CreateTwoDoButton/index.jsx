@@ -1,7 +1,7 @@
 import React from "react";
 import "./CreateTwoDoButton.css"
 
-function CreateTodoButton() {
+function CreateTwoDoButton() {
 
     const [addBtnState, setAddBtnState] = React.useState('');
 
@@ -17,4 +17,4 @@ function CreateTodoButton() {
     );
 }
 
-export { CreateTodoButton } 
+export { CreateTwoDoButton } 

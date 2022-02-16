@@ -1,7 +1,7 @@
 import React from "react";
 import "./TwoDoCounter.css"
 
-function TodoCounter({completedCount, total2DOs}) {
+function TwoDoCounter({completedCount, total2DOs}) {
     return (
         <>
             <h1>2DOs</h1>
@@ -10,5 +10,5 @@ function TodoCounter({completedCount, total2DOs}) {
     );
 }
 
-export { TodoCounter } 
+export { TwoDoCounter } 
 //This way of exporting, force you to import the function by its name

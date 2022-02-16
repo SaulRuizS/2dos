@@ -1,7 +1,7 @@
 import React from "react";
 import "./TwoDoItem.css";
 
-function TodoItem({text, completed, setCompletedState, remove2DO}) {
+function TwoDoItem({text, completed, setCompletedState, remove2DO}) {
 
     const [checkedState, setCheckedState] = React.useState('pending');
 
@@ -33,5 +33,5 @@ function TodoItem({text, completed, setCompletedState, remove2DO}) {
     );
 }
 
-export { TodoItem }
+export { TwoDoItem }
 

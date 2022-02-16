@@ -1,7 +1,7 @@
 import React from "react";
 import "./TwoDoSearch.css"
 
-function TodoSearch({searchValue, setSearchValue}) {
+function TwoDoSearch({searchValue, setSearchValue}) {
     
     const onSearchValueChange = (event) => {
         console.log(event.target.value);
@@ -17,4 +17,4 @@ function TodoSearch({searchValue, setSearchValue}) {
     );
 }
 
-export { TodoSearch }
+export { TwoDoSearch }
