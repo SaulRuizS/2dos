@@ -16,7 +16,7 @@ function useLocalStorage(itemName, initialValue) {
         
           if(!localStorage2DOs) {
             //In case there is no saved data, create a new localStorage
-            localStorage.setItem(itemName, JSON.stringify( initialValue ));
+            localStorage.setItem(itemName, JSON.stringify(initialValue));
             parsed2DOs = initialValue;
           } else {
             parsed2DOs = JSON.parse(localStorage2DOs);

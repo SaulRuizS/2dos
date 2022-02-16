@@ -20,7 +20,8 @@ function AppUI() {
             <TwoDoSearch />
             
             <TwoDoContext.Consumer>
-              { ({
+              {//Here is being called the Provider's "value", where are located all the props we want to use 
+                ({
                   error,
                   loading,
                   searchedTwoDos,

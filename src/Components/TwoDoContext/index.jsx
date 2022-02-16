@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocalStorage } from '../Components/useLocalStorage';
+import { useLocalStorage } from "../useLocalStorage";
 
 const TwoDoContext = React.createContext();
 
