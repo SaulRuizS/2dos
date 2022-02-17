@@ -1,0 +1,41 @@
+
+#modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(48, 87, 69, 0.7);
+    top: 0px;
+}
+
+.modal__window {
+    min-width: 340px;
+    min-height: 220px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(241, 239, 231);
+}
+
+.close-btn {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -40px;
+    left: 140px;
+    font-size: 3rem;
+    font-family: sans-serif;
+    text-justify: center;
+    /* background-color: aquamarine; */
+    background-image: url('../../public/x-mark.svg');
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-image: url('../../public/x-mark-red.svg');
+}

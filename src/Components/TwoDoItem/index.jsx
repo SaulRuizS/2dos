@@ -9,7 +9,7 @@ function TwoDoItem({text, completed, setCompletedState, remove2DO}) {
 
         <li className={`${completed && 'completed-text'}`}>
             <span 
-                className={`${completed && 'completed'} pending`}
+                className={`item-btn ${completed && 'completed'} pending`}
                 // className={`${checkedState}`}
                 onClick={() => {
                     completed?
@@ -19,7 +19,7 @@ function TwoDoItem({text, completed, setCompletedState, remove2DO}) {
             ></span>
             <p>{text}</p>
             <span 
-                className="remove"
+                className="item-btn remove"
                 onClick={() => {
                     remove2DO(text);
                     // alert('2DO removed');

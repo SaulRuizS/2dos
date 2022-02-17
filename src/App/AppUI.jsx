@@ -4,8 +4,9 @@ import { TwoDoCounter } from '../Components/TwoDoCounter'
 import { TwoDoSearch } from '../Components/TwoDoSearch'
 import { TwoDoList } from '../Components/TwoDoList'
 import { TwoDoItem} from '../Components/TwoDoItem'
-import { CreateTwoDoButton } from '../Components/CreateTwoDoButton'
+import { TwoDoButton } from '../Components/TwoDoButton'
 import { TwoDoContext } from '../Components/TwoDoContext'
+import { Modal } from '../Modal'
 
 function AppUI() {
 
@@ -38,6 +39,7 @@ function AppUI() {
     //The tag <></> is equal to <React.Fragment><React.Fragment>
       <React.Fragment>
         <div className='App'>
+
           <TwoDoCounter />
   
           <TwoDoSearch />
@@ -62,7 +64,17 @@ function AppUI() {
             }
           </TwoDoList>  
           
-          <CreateTwoDoButton />
+          <TwoDoButton
+            type={'New 2DO'}
+          /> {/*New 2DO Button*/}
+
+          <Modal>
+            <p>Testing Modal</p>
+            <TwoDoButton 
+              type={'Add 2DO'}
+            /> {/*Add 2DO Button*/}
+          </Modal>
+
         </div>
 
       </React.Fragment>

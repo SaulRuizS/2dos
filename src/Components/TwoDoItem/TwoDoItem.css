@@ -13,7 +13,7 @@ li {
     transition: 200ms ease-in-out;
 }
 
-span {
+.item-btn {
     height: 100%;
     width: 30px;
     border-radius: 8px 0px 8px 0px;
