@@ -1,7 +1,14 @@
 import React from "react";
+import { TwoDoContext } from "../TwoDoContext";
 import "./TwoDoCounter.css"
 
-function TwoDoCounter({completedCount, total2DOs}) {
+function TwoDoCounter() {
+    
+    const {
+        completedCount,
+        total2DOs,
+    } = React.useContext(TwoDoContext);
+
     return (
         <>
             <h1>2DOs</h1>

@@ -49,13 +49,21 @@ function TwoDoProvider(props) {
 
     return (
         <TwoDoContext.Provider value={ {
+            //Used in useLocalStorage
             loading,
             error,
+
+            //Used in TwoDoCounter
             completedCount,
             total2DOs,
+            
+            //Used in TwoDoSearch
             searchValue,
             setSearchValue,
+            
             searchedTwoDos,
+            
+            //Used in TwoDoItem
             setCompletedState,
             remove2DO,
         } }>

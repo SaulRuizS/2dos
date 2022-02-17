@@ -3,22 +3,18 @@ import "./TwoDoItem.css";
 
 function TwoDoItem({text, completed, setCompletedState, remove2DO}) {
 
-    const [checkedState, setCheckedState] = React.useState('pending');
+    // const [checkedState, setCheckedState] = React.useState('pending');
 
     return (
 
         <li className={`${completed && 'completed-text'}`}>
             <span 
-                className={`${checkedState}`}
+                className={`${completed && 'completed'} pending`}
+                // className={`${checkedState}`}
                 onClick={() => {
-                    if(completed===false) {
-                        setCheckedState('completed');
-                        setCompletedState(text, true);
-                    }
-                    else {
-                        setCheckedState('pending');
-                        setCompletedState(text, false);
-                    }
+                    completed?
+                        setCompletedState(text,false)
+                        :setCompletedState(text,true);
                 }}
             ></span>
             <p>{text}</p>

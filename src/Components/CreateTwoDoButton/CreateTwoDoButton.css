@@ -12,7 +12,7 @@ button {
     font-weight: 500;
     color: rgb(37, 88, 65);
     background-color: rgb(125, 206, 170);
-    box-shadow: -4px 4px 0px 1px #305745;
+    box-shadow: -4px 4px 0px 1px rgb(89, 145, 120);
     cursor: pointer;
     user-select: none;
 }

@@ -5,10 +5,15 @@
   align-items: center;
   min-width: 288px;
   max-width: 80%;
-  min-height: 500px;
+  min-height: 200px;
   max-height: 80vh;
   border-radius: 20px;
   text-align: center;
   background-color: rgb(241, 239, 231);
   box-shadow: -16px 16px 0px 1px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  font-size: 2rem;
+  color: rgb(18, 68, 46);
 }
