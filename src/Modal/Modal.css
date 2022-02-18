@@ -11,8 +11,8 @@
 }
 
 .modal__window {
-    min-width: 340px;
-    min-height: 220px;
+    min-width: 360px;
+    height: 160px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -26,16 +26,31 @@
     width: 30px;
     height: 30px;
     position: relative;
-    top: -40px;
-    left: 140px;
+    top: -6px;
+    left: 150px;
     font-size: 3rem;
     font-family: sans-serif;
     text-justify: center;
-    /* background-color: aquamarine; */
     background-image: url('../../public/x-mark.svg');
     cursor: pointer;
 }
 
 .close-btn:hover {
     background-image: url('../../public/x-mark-red.svg');
+}
+
+.modal__input {
+    margin: 10px 0px 0px 0px;
+    width: 320px;
+    /* margin-bottom: 0px; */
+}
+
+form {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
 }

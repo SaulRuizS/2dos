@@ -41,7 +41,7 @@ li {
 
 @media (min-width: 760px) {
 
-    span:hover {
+    .item-btn:hover {
         background-color: rgba(128, 128, 128, 0.192);
         transition: 200ms ease-in;
     }

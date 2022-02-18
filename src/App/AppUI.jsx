@@ -68,12 +68,7 @@ function AppUI() {
             type={'New 2DO'}
           /> {/*New 2DO Button*/}
 
-          <Modal>
-            <p>Testing Modal</p>
-            <TwoDoButton 
-              type={'Add 2DO'}
-            /> {/*Add 2DO Button*/}
-          </Modal>
+          <Modal />
 
         </div>
 

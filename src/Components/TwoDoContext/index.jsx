@@ -46,6 +46,7 @@ function TwoDoProvider(props) {
         save2DOs(new2DOsList);
     };
     
+    const [modalShow, setModalShow] = React.useState(false);
 
     return (
         <TwoDoContext.Provider value={ {
@@ -66,6 +67,10 @@ function TwoDoProvider(props) {
             //Used in TwoDoItem
             setCompletedState,
             remove2DO,
+
+            //Used in Modal
+            modalShow,
+            setModalShow,
         } }>
             {props.children}
         </TwoDoContext.Provider>
