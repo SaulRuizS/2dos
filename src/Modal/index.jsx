@@ -25,8 +25,10 @@ function Modal({ children }) {
                     setModalShow(false)
                 }}>
             </span>
-
-            <input type="text" className='modal__input' placeholder='Write a New 2DO!'/>
+            <textarea 
+                className='modal__input' 
+                placeholder='Write a New 2DO!'
+            />
             <TwoDoButton 
                 type={'Add 2DO'}
             /> {/*Add 2DO Button*/}
