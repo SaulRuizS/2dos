@@ -26,22 +26,13 @@ function Modal({ children }) {
                 }}>
             </span>
             <textarea 
+                id='New2doText'
                 className='modal__input' 
                 placeholder='Write a New 2DO!'
-            />
+            ></textarea>
             <TwoDoButton 
                 type={'Add 2DO'}
             /> {/*Add 2DO Button*/}
-
-            {/* 
-            <form>
-              <input type="text" placeholder='Write a New 2DO!'/>
-              <TwoDoButton 
-                type={'Add 2DO'}
-              /> //Add 2DO Button
-              </form> 
-            */}
-
         </div>,
         ModalWindow
     );

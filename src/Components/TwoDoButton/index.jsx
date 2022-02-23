@@ -9,23 +9,26 @@ function TwoDoButton({ type }) {
     const {
         modalShow,
         setModalShow,
+        new2doText,
+        setNew2doText,
     } = React.useContext(TwoDoContext);
 
     return (
         <button className={`${TwoDoBtnState}`} onClick={() => {
+
             if(TwoDoBtnState === '') {
                 setTwoDoBtnState('pressed');
                 setTimeout(() => {
                     setTwoDoBtnState('')
                     if(type === 'New 2DO'){
                         setModalShow(true);
+                    }else if(type === 'Add 2DO'){
+                        console.log(new2doText());
+                        setModalShow(false);
+                        setNew2doText('');;
                     }
                 }, 200);
             }
-
-            // else if(type === 'Add 2DO'){
-                
-            // }
         }}>{btnType}</button>
     );
 }

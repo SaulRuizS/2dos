@@ -48,6 +48,14 @@ function TwoDoProvider(props) {
     
     const [modalShow, setModalShow] = React.useState(false);
 
+    const new2doText = () => {
+        return document.getElementById('New2doText').value;
+    }
+
+    const setNew2doText = (text) => {
+        document.getElementById('New2doText').value = text;
+    }
+
     return (
         <TwoDoContext.Provider value={ {
             //Used in useLocalStorage
@@ -71,6 +79,11 @@ function TwoDoProvider(props) {
             //Used in Modal
             modalShow,
             setModalShow,
+
+            //Used to add new 2DO
+            new2doText,
+            setNew2doText,
+            // modal2doText,
         } }>
             {props.children}
         </TwoDoContext.Provider>
