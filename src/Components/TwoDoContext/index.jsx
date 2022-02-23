@@ -20,7 +20,7 @@ function TwoDoProvider(props) {
     let searchedTwoDos = []; //Space to save searched 2DOs
     
     if(!searchValue.length >= 1) { 
-        //If nothing has been writen in the input, show all 2DOs.
+        //If nothing has been written in the input, show all 2DOs.
         searchedTwoDos = TwoDos;
     } else {
         searchedTwoDos = TwoDos.filter((TwoDo) => {
@@ -45,6 +45,12 @@ function TwoDoProvider(props) {
         new2DOsList.splice(TwoDoIndex, 1);
         save2DOs(new2DOsList);
     };
+
+    const addNew2DO = (New2DO) => {
+        const adding2DO = [...TwoDos];
+        adding2DO.push(New2DO);
+        save2DOs(adding2DO);
+    }
     
     const [modalShow, setModalShow] = React.useState(false);
 
@@ -61,6 +67,8 @@ function TwoDoProvider(props) {
             //Used in useLocalStorage
             loading,
             error,
+            save2DOs,
+            TwoDos,
 
             //Used in TwoDoCounter
             completedCount,
@@ -83,7 +91,7 @@ function TwoDoProvider(props) {
             //Used to add new 2DO
             new2doText,
             setNew2doText,
-            // modal2doText,
+            addNew2DO,
         } }>
             {props.children}
         </TwoDoContext.Provider>

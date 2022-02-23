@@ -3,7 +3,8 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 30px;
+    min-height: 30px;
+    height: 100%;
     margin: 10px 0px;
     border-radius: 8px 0px 8px 0px;
     font-family: 'Ubuntu', sans-serif;
@@ -13,8 +14,15 @@ li {
     transition: 200ms ease-in-out;
 }
 
+li p {
+    width: 160px;
+    /* height: 100px; */
+    /* min-height: 30px; */
+}
+
 .item-btn {
-    height: 100%;
+    /* height: 100px; */
+    min-height: 30px;
     width: 30px;
     border-radius: 8px 0px 8px 0px;
     cursor: pointer;
@@ -22,21 +30,23 @@ li {
 
 .pending {
     background-image: url("../../../public/circle-dotted.svg");
+    background-repeat: no-repeat;
     transition: 50ms ease-in;
 }
 
 .completed {
     background-image: url("../../../public/circle-check.svg");
+    background-repeat: no-repeat;
     transition: 50ms ease-in;
 }
 
 .completed-text {
     text-decoration:line-through;
-    /* transition: 200ms ease-in; */
 }
 
 .remove {
     background-image: url("../../../public/x-mark.svg");
+    background-repeat: no-repeat;
 }
 
 @media (min-width: 760px) {
@@ -48,7 +58,6 @@ li {
     
     .pending:hover {
         background-image: url("../../../public/circle-dotted-blue.svg");
-        /* transition: 50ms ease-in; */
     }
     
     .remove:hover {

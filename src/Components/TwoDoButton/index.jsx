@@ -7,10 +7,11 @@ function TwoDoButton({ type }) {
     const [TwoDoBtnState, setTwoDoBtnState] = React.useState('');
     const btnType = type;
     const {
-        modalShow,
+        // modalShow,
         setModalShow,
         new2doText,
         setNew2doText,
+        addNew2DO,
     } = React.useContext(TwoDoContext);
 
     return (
@@ -23,7 +24,12 @@ function TwoDoButton({ type }) {
                     if(type === 'New 2DO'){
                         setModalShow(true);
                     }else if(type === 'Add 2DO'){
-                        console.log(new2doText());
+                        // console.log(new2doText());
+                        const new2DO = {
+                            text: new2doText(),
+                            completed: false,
+                        }
+                        addNew2DO(new2DO);
                         setModalShow(false);
                         setNew2doText('');;
                     }

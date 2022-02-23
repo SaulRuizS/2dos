@@ -10,7 +10,7 @@ function TwoDoSearch() {
     } = React.useContext(TwoDoContext);
     
     const onSearchValueChange = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setSearchValue(event.target.value);
     }
 
