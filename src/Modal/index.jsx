@@ -10,6 +10,7 @@ function Modal({ children }) {
     const {
         modalShow,
         setModalShow,
+        setNew2doText,
     } = React.useContext(TwoDoContext);
 
     (modalShow)?
@@ -23,6 +24,7 @@ function Modal({ children }) {
                 className='close-btn'
                 onClick={() => {
                     setModalShow(false)
+                    setNew2doText('');;
                 }}>
             </span>
             <textarea 
