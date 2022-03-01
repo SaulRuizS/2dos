@@ -6,14 +6,21 @@ function TwoDoList({
     onError, 
     loading,
     onLoading,
-    onEmptyTwoDos,
     searchedTwoDos,
+    onEmptyTwoDos,
+    total2DOs,
+    onNoSearchResult,
     render,
+    // children = this.children,
 }) {
     return(
         <section>
             <ul>
-                {children}
+                {error && onError()}
+                {loading && onLoading()}
+                {(!loading && !total2DOs) && onEmptyTwoDos()}
+                {(!!total2DOs && !searchedTwoDos.length) && onNoSearchResult()}
+                {searchedTwoDos.map(render)}
             </ul>
         </section>
     );

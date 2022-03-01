@@ -77,7 +77,6 @@ function TwoDoProvider(props) {
             //Used in TwoDoSearch
             searchValue,
             setSearchValue,
-            
             searchedTwoDos,
             
             //Used in TwoDoItem

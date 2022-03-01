@@ -2,11 +2,14 @@ import './App.css';
 import React from "react";
 import { TwoDoCounter } from '../Components/TwoDoCounter'
 import { TwoDoSearch } from '../Components/TwoDoSearch'
-import { TwoDoList } from '../Components/TwoDoList'
 import { TwoDoItem} from '../Components/TwoDoItem'
 import { TwoDoButton } from '../Components/TwoDoButton'
 import { TwoDoContext } from '../Components/TwoDoContext'
 import { Modal } from '../Modal'
+import { TwoDoList } from '../Components/TwoDoList'
+import { TwoDoError } from '../Components/TwoDoList/TwoDoError';
+import { TwoDoLoading } from '../Components/TwoDoList/TwoDoLoading';
+import { EmptyTwoDo } from '../Components/TwoDoList/EmptyTwoDo';
 
 function AppUI() {
 
@@ -17,6 +20,7 @@ function AppUI() {
     searchedTwoDos,
     setCompletedState,
     remove2DO,
+    total2DOs,
   } = React.useContext(TwoDoContext);
 
   /*
@@ -50,8 +54,10 @@ function AppUI() {
             loading={loading}
             onLoading={() => <TwoDoLoading />}
             searchedTwoDos={searchedTwoDos}
-            onEmptyTodos={() => <EmptyTwoDo />}
-            render={todo => (
+            onEmptyTwoDos={() => <EmptyTwoDo />}
+            total2DOs={total2DOs}
+            onNoSearchResult={() => <p>Oh, it seems you don't have that 2DO</p>}
+            render={TwoDo => (
               <TwoDoItem 
                 key={TwoDo.text} 
                 text={TwoDo.text} 
@@ -67,7 +73,7 @@ function AppUI() {
             {loading && <p>Loading, please wait...</p>}
             {(!loading && !searchedTwoDos.length) && <p>Create your first 2DO!</p>}
       
-          {searchedTwoDos.map( (TwoDo) => 
+            {searchedTwoDos.map( (TwoDo) => 
               <TwoDoItem 
                 key={TwoDo.text} 
                 text={TwoDo.text} 

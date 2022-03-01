@@ -28,8 +28,12 @@ function useLocalStorage(itemName, initialValue) {
           setError(error);
         }
       }, 1000);
-    });
-  
+    }, []); 
+    /*
+    The [] makes useEffect run only once, it is the condition 
+    that has to be fullfiled to activate useEffect()
+    */
+   
     const save2DOs = (TwoDosToSave) => {
       try {
         const string2DOs = JSON.stringify(TwoDosToSave);
