@@ -1,12 +1,19 @@
 import React from "react";
 import "./TwoDoList.css";
 
-function TwoDoList(props) {
+function TwoDoList({
+    error, 
+    onError, 
+    loading,
+    onLoading,
+    onEmptyTwoDos,
+    searchedTwoDos,
+    render,
+}) {
     return(
-        // .children appends a child element into a parent element
         <section>
             <ul>
-                {props.children}
+                {children}
             </ul>
         </section>
     );

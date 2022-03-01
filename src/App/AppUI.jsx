@@ -43,8 +43,26 @@ function AppUI() {
           <TwoDoCounter />
   
           <TwoDoSearch />
-          
-          <TwoDoList>
+
+          <TwoDoList 
+            error={error}
+            onError={() => <TwoDoError />}
+            loading={loading}
+            onLoading={() => <TwoDoLoading />}
+            searchedTwoDos={searchedTwoDos}
+            onEmptyTodos={() => <EmptyTwoDo />}
+            render={todo => (
+              <TwoDoItem 
+                key={TwoDo.text} 
+                text={TwoDo.text} 
+                completed={TwoDo.completed}
+                setCompletedState={setCompletedState}
+                remove2DO={remove2DO}
+              />
+            )}
+          />
+
+          {/* <TwoDoList>
             {error && <p>There was an error...</p>}
             {loading && <p>Loading, please wait...</p>}
             {(!loading && !searchedTwoDos.length) && <p>Create your first 2DO!</p>}
@@ -62,7 +80,7 @@ function AppUI() {
             // When rendering a list, to avoid possible problems a "key" will be needed
             // for each element inside the list, this key must be different in each case.
             }
-          </TwoDoList>  
+          </TwoDoList>   */}
           
           <TwoDoButton
             type={'New 2DO'}
