@@ -10,6 +10,7 @@ import { TwoDoList } from '../Components/TwoDoList'
 import { TwoDoError } from '../Components/TwoDoList/TwoDoError';
 import { TwoDoLoading } from '../Components/TwoDoList/TwoDoLoading';
 import { EmptyTwoDo } from '../Components/TwoDoList/EmptyTwoDo';
+import { ChangeAlertWithStorageListener } from '../ChangeAlert/index'
 
 function AppUI() {
 
@@ -93,6 +94,8 @@ function AppUI() {
           /> {/*New 2DO Button*/}
 
           <Modal />
+
+          <ChangeAlertWithStorageListener />
 
         </div>
 

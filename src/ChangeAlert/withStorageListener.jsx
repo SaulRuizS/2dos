@@ -1,3 +1,4 @@
+import './storageChange.css'
 import React from "react";
 
 function withStorageListener(WrappedComponent) {
@@ -16,7 +17,7 @@ function withStorageListener(WrappedComponent) {
                 show={storageChange}
                 toggleShow={setStorageChange}
             />
-        )
+        );
     }
 }
 

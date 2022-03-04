@@ -1,0 +1,24 @@
+#storageChange {
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.storageChange__window {
+    width: 50%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    background-color: rgb(241, 239, 231);
+}

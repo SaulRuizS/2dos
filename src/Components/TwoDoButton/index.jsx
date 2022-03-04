@@ -2,7 +2,7 @@ import React from "react";
 import "./TwoDoButton.css"
 import { TwoDoContext } from "../TwoDoContext";
 
-function TwoDoButton({ type }) {
+function TwoDoButton({ type, toggleShow }) {
 
     const [TwoDoBtnState, setTwoDoBtnState] = React.useState('');
     const btnType = type;
@@ -32,6 +32,9 @@ function TwoDoButton({ type }) {
                         addNew2DO(new2DO);
                         setModalShow(false);
                         setNew2doText('');;
+                    }else if(type === 'Reload 2DOs') {
+                        window.location.reload();
+                        toggleShow(false);
                     }
                 }, 200);
             }
