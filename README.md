@@ -3,7 +3,7 @@
 ## Usage
 
 ## Contributing
-Feel free to use and contribute in any way.
+Feel free to use and contribute.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
