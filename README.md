@@ -1,4 +1,5 @@
 # 2Dos
+A ToDos web app.
 
 ## Usage
 
